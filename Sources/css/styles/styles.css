@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #483770 ; /*483770 #a77fd4*/
+  font-family: "Aboreto";
+
+
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
+/*?---------Header Section-----------------------------*/
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 10dvh;
+  /* overflow: hidden; */
+  background: #a77fd4;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  align-items: center;
+}
+
+.header__marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header__track {
+  display: inline-flex;
+  gap: 60px;
+  animation: scrollWords 46s linear infinite;
+}
+
+.header__track span {
+  color: white;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #fff5;
+}
+
+.repet {
+  animation: desfas 46s linear 23s infinite;
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+
+#btn__sound, .link {
+  background-color: #483770;
+  color: #fffe;
+  font-size: 60px;
+  border: none;
+  border-radius: 16px;
+  margin-right: 50px;
+  cursor: url("../../Media/img/cinnamoroll-custom-cursor.png") 32 32, pointer;
+
+}
+
+.link:not(:is(:active, :hover)) {
+  text-decoration: none;
+}
+
+#btn__sound:hover, .link:hover {
+  animation: zoombtn 0.5s both;
+}
+
+#btn__sound:active, .link:active {
+  opacity: .6;
+  animation: zoombtn 0.5s both reverse;
+
+}
+
+@keyframes zoombtn {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes scrollWords {
+  from {
+    transform: translateX(101%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes desfas {
+    from {
+    transform: translateX(1%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+/*?---------Header Queries-----------------------------*/
+

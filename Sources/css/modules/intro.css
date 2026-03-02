@@ -1,0 +1,102 @@
+
+.app {
+   animation: entrada 3s both -0.2s;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #2b1055, #1a1a40);
+  display: grid;
+  place-content: center;
+  font-family: "Italianno"
+
+  /* z-index: 999; */
+}
+
+.intro__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.intro__btn {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  
+}
+
+.titilar {
+  animation: titilar 0.8s both infinite alternate;
+}
+
+@keyframes titilar {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: .6;
+  }
+}
+
+.intro__img {
+  width: 160px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 20px #fff6);
+}
+
+.btn__text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Aboreto";
+
+}
+
+.intro__text {
+  color: #fff;
+  font-size: 6rem;
+  letter-spacing: 4px;
+  margin-bottom: 300px;
+}
+
+.hide {
+  animation: fadeOut 2s forwards;
+}
+
+.reverhide {
+  animation: fadeOut 2s forwards reverse;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.hidden {
+  display: none;
+
+}
+
+#intro__video {
+  width: 100%;
+  height: 800px;
+  border-radius: 44px;
+}
+
+/*?-----------Media Queries-------------------*/
+
+@media screen and (max-width:800px) {
+    #intro__video {
+      max-width: 800px;
+      height: 100dvh;
+    }
+}
