@@ -75,8 +75,8 @@ btnIntro.addEventListener("click", () => {
 })
 
 const introLines = [
-  { text: "Feliz cumpleaños…", speed: 160 },
-  { text: "Pequeña 💖", speed: 160 }
+  { text: "Feliz cumpleaños", speed: 160 },
+  { text: "Pequeña 🩵", speed: 160 }
 ];
 
 let introI = 0, introW = 0;
@@ -129,8 +129,6 @@ const btn = () => {
     }
 
     if(mediaQuery.matches || mediaQueryMediun.matches) {
-      miGalleryA.classList.remove("reverhide")
-      miGalleryB.classList.remove("reverhide")
       miGalleryA.classList.add("hide")
       miGalleryB.classList.add("hide")
 
@@ -187,12 +185,18 @@ miAudio.addEventListener("timeupdate", () => {
     if(t >= 167 && salir) {
         miMain.style.display = "none";
         btnToggle()
-        if(!mediaQueryMediun.matches) {
+        if(mediaQueryMediun.matches || mediaQuery.matches) {
           miGalleryA.classList.remove("hide")
           miGalleryB.classList.remove("hide")
 
           miGalleryA.classList.add("reverhide")
           miGalleryB.classList.add("reverhide")
+
+          setTimeout(() => {
+            miGalleryA.classList.remove("reverhide")
+            miGalleryB.classList.remove("reverhide")
+
+          }, 3005);
 
          if(banderaflecha) {
             miGalleryA.classList.remove("hidde")
@@ -202,10 +206,9 @@ miAudio.addEventListener("timeupdate", () => {
           }
           document.querySelector(".wrapper").style.justifyContent = "space-between"
           salir = false
-
         } else {
-          miGalleryA.style.animation = "telonClose 5s backward linear"
-          miGalleryB.style.animation = "telonClose 5s backward linear"
+          miGalleryA.style.animation = "telonClose 5s both linear"
+          miGalleryB.style.animation = "telonClose 5s both linear"
           
         }
 
