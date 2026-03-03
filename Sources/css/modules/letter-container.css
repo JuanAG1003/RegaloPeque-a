@@ -55,7 +55,7 @@
 .view__container {
     position: absolute;
     max-width: 900px;
-    max-height: 60dvh;
+    max-height: 70dvh;
     top: 50px;
     border-radius: 40px;
     overflow: hidden;
