@@ -561,9 +561,11 @@ renderVideos();
 const videoModal = document.getElementById("videoModal");
 const modalVideo = document.getElementById("modalVideo");
 const closeModal = document.getElementById("closeModal");
+let banderaVideo = false
 
 // Delegación de eventos para todos los videos
 videosContainer.addEventListener("click", (e) => {
+  banderaVideo = true
 
   const video = e.target.closest(".video__container");
 
@@ -579,6 +581,7 @@ videosContainer.addEventListener("click", (e) => {
   videoModal.classList.add("active");
   modalVideo.play();
   body.classList.add("no-scroll")
+
   if(!toggle) {
     toggle = true
     return
@@ -613,10 +616,12 @@ view.addEventListener("click", (e) => {
 
 // Cerrar con ESC
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
+
+  if (e.key === "Escape" && banderaVideo) {
     closeVideoModal();
     body.classList.remove("no-scroll")
     btnToggle()
+    banderaVideo = false
   }
 
   if(miBtn.id === "disparo" ) {
