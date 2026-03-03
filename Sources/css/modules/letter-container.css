@@ -10,7 +10,7 @@
 
 .main__text-container {
     height: 80dvh;
-    width: clamp(600px, 100dvw, 800px);
+    width: clamp(200px, 90dvw, 800px);
     padding: 8%;
     color: #fff;
     font-size: 2.5rem;

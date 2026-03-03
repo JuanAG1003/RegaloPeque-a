@@ -169,10 +169,12 @@
 @media screen and (max-width: 1000px) {
     .wrapper {
         flex-direction: column;
+        height: 80dvh;
     }
 
     .galleryA, .galleryB {
         margin: auto;
+        width: 1fr;
         max-width: 800px;
         display: flex;
         flex-direction: column;
@@ -180,13 +182,18 @@
     }
 
     .galleryA__img-container, .galleryB__img-container {
-        height: 22dvh;
+        /* height: 11dvh; */
         
     }
 
     .galleryA__img-container:nth-child(2), .galleryB__img-container:nth-child(2)  {
-        height: auto;
-        grid-template-columns: 220px 220px;
+        /* height: auto; */
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery__section .img {
+        height: 11dvh;
+
     }
 }
 

@@ -64,6 +64,7 @@
   font-size: 6rem;
   letter-spacing: 4px;
   margin-bottom: 300px;
+  text-align: center;
 }
 
 .hide {
@@ -94,7 +95,7 @@
 
 /*?-----------Media Queries-------------------*/
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1000px) {
     #intro__video {
       max-width: 800px;
       height: 100dvh;

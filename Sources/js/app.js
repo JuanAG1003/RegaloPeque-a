@@ -125,10 +125,20 @@ const btn = () => {
       i = 0
       w = 0
       isTyping = false
+      salir = true
     }
 
-    miGalleryA.style.animation = "telon 3s both linear"
-    miGalleryB.style.animation = "telon 3s both linear"
+    if(mediaQuery.matches || mediaQueryMediun.matches) {
+      miGalleryA.classList.remove("reverhide")
+      miGalleryB.classList.remove("reverhide")
+      miGalleryA.classList.add("hide")
+      miGalleryB.classList.add("hide")
+
+    } else {
+      miGalleryA.style.animation = "telon 3s both linear"
+      miGalleryB.style.animation = "telon 3s both linear"
+
+    }
 
    setTimeout(() => {
       if(mediaQueryMediun.matches || mediaQuery.matches) {
@@ -166,23 +176,39 @@ miBtn.addEventListener("click", (e) => {
     btn()
 })
 
+let salir = true
+
 miAudio.addEventListener("timeupdate", () => {
-    
     if (i >= letter.length) return;
+    
 
     let t = miAudio.currentTime;
 
-    if(t >= 167) {
+    if(t >= 167 && salir) {
         miMain.style.display = "none";
-        miGalleryA.style.animation = "telonClose 5s both linear"
-        miGalleryB.style.animation = "telonClose 5s both linear"
         btnToggle()
-        if(mediaQueryMediun.matches) {
-          miGalleryA.classList.remove("hidde")
-          miGalleryB.classList.remove("hidde")
-          document.querySelector(".wrapper").style.justifyContent = "space-between"
+        if(!mediaQueryMediun.matches) {
+          miGalleryA.classList.remove("hide")
+          miGalleryB.classList.remove("hide")
 
+          miGalleryA.classList.add("reverhide")
+          miGalleryB.classList.add("reverhide")
+
+         if(banderaflecha) {
+            miGalleryA.classList.remove("hidde")
+
+          } else {
+            miGalleryB.classList.remove("hidde")
+          }
+          document.querySelector(".wrapper").style.justifyContent = "space-between"
+          salir = false
+
+        } else {
+          miGalleryA.style.animation = "telonClose 5s backward linear"
+          miGalleryB.style.animation = "telonClose 5s backward linear"
+          
         }
+
 
     }
 
