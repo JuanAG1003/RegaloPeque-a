@@ -129,7 +129,7 @@
 }
 
 .view__container > .img {
-    height: 800px;
+    /* height: 800px; */
     cursor: url("../../Media/img/cola-cinnamoroll.png") 40 40, pointer;
 }
 
